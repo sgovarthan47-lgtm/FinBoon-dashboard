@@ -5,24 +5,14 @@ export default defineConfig({
   plugins: [react()],
   server: {
     port: 5173,
-    open: true,
+    host: 'localhost',
   },
   build: {
     outDir: 'dist',
     sourcemap: false,
-    minify: 'terser',
-    rollupOptions: {
-      output: {
-        manualChunks: {
-          vendor: ['react', 'react-dom', 'react-router-dom'],
-          charts: ['chart.js', 'react-chartjs-2'],
-          motion: ['framer-motion'],
-          icons: ['react-icons'],
-        },
-      },
-    },
+    minify: 'esbuild',
   },
   optimizeDeps: {
-    include: ['react', 'react-dom', 'react-router-dom', 'framer-motion', 'chart.js', 'react-chartjs-2', 'react-icons'],
+    include: ['react', 'react-dom', 'react-router-dom'],
   },
 })
