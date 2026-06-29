@@ -24,12 +24,12 @@ export default function App() {
 
   return (
     <Router>
-      <Layout isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode}>
-        <Routes>
+      <Routes>
+        <Route element={<Layout isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} />}>
           <Route path="/" element={<Dashboard />} />
           {/* Additional routes will be added here */}
-        </Routes>
-      </Layout>
+        </Route>
+      </Routes>
     </Router>
   )
 }
