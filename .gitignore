@@ -1,0 +1,11 @@
+# FinBoon Dashboard - Configuration Files
+
+This directory is automatically managed by build tools.
+
+## Generated Files
+
+- `dist/` - Production build output
+
+## Do Not Modify
+
+Build artifacts are regenerated on each build.
