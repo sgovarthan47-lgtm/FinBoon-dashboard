@@ -1,4 +1,5 @@
 import { Outlet } from 'react-router-dom'
+import PropTypes from 'prop-types'
 
 export default function Layout({ isDarkMode, toggleDarkMode }) {
   return (
@@ -11,6 +12,8 @@ export default function Layout({ isDarkMode, toggleDarkMode }) {
             <button
               onClick={toggleDarkMode}
               className="p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
+              type="button"
+              aria-label="Toggle dark mode"
             >
               {isDarkMode ? '☀️' : '🌙'}
             </button>
@@ -24,4 +27,9 @@ export default function Layout({ isDarkMode, toggleDarkMode }) {
       </div>
     </div>
   )
+}
+
+Layout.propTypes = {
+  isDarkMode: PropTypes.bool.isRequired,
+  toggleDarkMode: PropTypes.func.isRequired,
 }
